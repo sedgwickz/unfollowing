@@ -6,4 +6,6 @@
 
 放个视频看看效果。
 
-[![Everything Is AWESOME](https://github.com/sedgwickz/unfollowing/blob/main/demo.PNG?raw=true)](https://youtu.be/13FLYqvma0c "Everything Is AWESOME")
+https://youtu.be/13FLYqvma0c
+
+[![Watch the video](https://img.youtube.com/vi/13FLYqvma0c/maxresdefault.jpg)](https://youtu.be/13FLYqvma0c)
