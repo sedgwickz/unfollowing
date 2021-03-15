@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  try to take over the world!
 // @author       You
-// @match        https://twitter.com/sedgwickz/following
+// @match        https://twitter.com/*/following
 // @grant        none
 // ==/UserScript==
 
