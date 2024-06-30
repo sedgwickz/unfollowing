@@ -8,7 +8,7 @@
 
 效果如下：
 
-[![](https://www.youtube.com/watch?v=yNk2tixoYF4/0.jpg)](https://www.youtube.com/watch?v=yNk2tixoYF4)
+[![](https://img.youtube.com/vi/yNk2tixoYF4/0.jpg)](https://www.youtube.com/watch?v=yNk2tixoYF4)
 
 Lightweight automatic unfollowing greasemonkey script for Twitter
 
@@ -18,4 +18,4 @@ Usage: On the Twitter/X Followers page on the web, click the unfollow button in 
 
 The effect is as follows:
 
-[![](https://www.youtube.com/watch?v=yNk2tixoYF4/0.jpg)](https://www.youtube.com/watch?v=yNk2tixoYF4)
+[![](https://img.youtube.com/vi/yNk2tixoYF4/0.jpg)](https://www.youtube.com/watch?v=yNk2tixoYF4)
