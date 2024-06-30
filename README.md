@@ -6,7 +6,7 @@
 
 使用：在web端推特/X关注人页面，点击右上方取关按钮即可。
 
-效果如下：
+视频效果如下：
 
 [![](https://img.youtube.com/vi/yNk2tixoYF4/0.jpg)](https://www.youtube.com/watch?v=yNk2tixoYF4)
 
