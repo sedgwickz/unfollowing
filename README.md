@@ -8,4 +8,14 @@
 
 效果如下：
 
-[![](https://github.com/sedgwickz/unfollowing/blob/main/demo.mov)](https://github.com/sedgwickz/unfollowing/blob/main/demo.mov)
+[![](https://www.youtube.com/watch?v=yNk2tixoYF4/0.jpg)](https://www.youtube.com/watch?v=yNk2tixoYF4)
+
+Lightweight automatic unfollowing greasemonkey script for Twitter
+
+Script installation address: https://greasyfork.org/en/scripts/423259-twitter-unfollowing
+
+Usage: On the Twitter/X Followers page on the web, click the unfollow button in the upper right corner.
+
+The effect is as follows:
+
+[![](https://www.youtube.com/watch?v=yNk2tixoYF4/0.jpg)](https://www.youtube.com/watch?v=yNk2tixoYF4)

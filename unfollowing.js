@@ -44,8 +44,8 @@
         }
         document.documentElement.scrollTo(0, 999999999)
         if (finished) {
-            unFollowButton.innerText = "取关"
-            if(confirm('已经帮你全部取关，感谢您的使用。如果觉得本项目对你有帮助，麻烦给我一个star！')) {
+            unFollowButton.innerText = "取关 unfollow"
+            if(confirm('Finished. 已经帮你全部取关，感谢您的使用。如果觉得本项目对你有帮助，麻烦给我一个star！')) {
                 document.location = 'https://github.com/sedgwickz/unfollowing'
             }
             running = false
