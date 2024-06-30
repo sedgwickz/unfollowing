@@ -8,4 +8,4 @@
 
 效果如下：
 
-![Demo](https://github.com/sedgwickz/unfollowing/blob/main/demo.gif)
+[![](https://github.com/sedgwickz/unfollowing/blob/main/demo.mov)](https://github.com/sedgwickz/unfollowing/blob/main/demo.mov)
