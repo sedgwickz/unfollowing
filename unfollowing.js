@@ -6,21 +6,45 @@
 // @author       You
 // @match        https://x.com/*/following
 // @grant        none
+// @downloadURL https://update.greasyfork.org/scripts/423259/XTwitter%20Unfollowing.user.js
+// @updateURL https://update.greasyfork.org/scripts/423259/XTwitter%20Unfollowing.meta.js
 // ==/UserScript==
 
 (function() {
     'use strict';
     const sleep = ms => new Promise((resolve) => setTimeout(resolve, ms))
+    function applyStyles(element, styles) {
+        for (let property in styles) {
+            if (styles.hasOwnProperty(property)) {
+                element.style[property] = styles[property];
+            }
+        }
+    }
+
+    const container = document.createElement('div')
+    applyStyles(container, {
+        position: 'fixed',
+        'z-index': 9999999,
+        padding: '10px',
+        top: '0',
+        right: '0',
+        background: '#fff',
+        display: 'flex',
+        'gap': '4px',
+        'flex-direction': 'column',
+        'justify-content': 'center',
+        'align-items': 'center'
+    })
+    document.body.append(container)
 
     const unFollowButton = document.createElement('button')
-    unFollowButton.innerText = "取关"
-    unFollowButton.style.position = "fixed"
-    unFollowButton.style.padding = "10px"
-    unFollowButton.style.top = "0px"
-    unFollowButton.style.right = "0px"
-    unFollowButton.style.background = "#5E53F5"
-    unFollowButton.zIndex = 999999
-    let finished = false
+    unFollowButton.innerText = "Unfollow Start"
+    container.append(unFollowButton)
+
+    const descDiv = document.createElement('div')
+    descDiv.innerHTML = `<div>Feedback & Support 😇 click here ⬇️ </div><div><a href='' target='_blank'> github</a></div>`
+    applyStyles(descDiv, { color: '#999', 'text-align': 'center'})
+    container.append(descDiv)
 
     function getConfirmButton() {
         for(const item of document.querySelectorAll("button[role='button']")) {
@@ -31,10 +55,8 @@
     }
 
     async function unFollow() {
-        finished = true
         for(const item of document.querySelectorAll("button[role='button']")) {
             if(item.innerText == 'Following') {
-                finished = false
                 await sleep(2000)
                 item.click()
                 await sleep(1000)
@@ -43,23 +65,15 @@
             }
         }
         document.documentElement.scrollTo(0, 999999999)
-        if (finished) {
-            unFollowButton.innerText = "取关 unfollow"
-            if(confirm('Finished. 已经帮你全部取关，感谢您的使用。如果觉得本项目对你有帮助，麻烦给我一个star！')) {
-                document.location = 'https://github.com/sedgwickz/unfollowing'
-            }
-            running = false
-            throw 'finished'
-        }
+        await sleep(2000)
     }
 
     unFollowButton.addEventListener('click', async () => {
-        unFollowButton.innerText = "进行中...刷新停止"
+        unFollowButton.innerText = "Unfollowing is working...refresh to stop"
         while (1) {
             await unFollow()
         }
     })
-    document.body.append(unFollowButton)
 
 
 })();
