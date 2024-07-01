@@ -86,7 +86,6 @@ function createUnfollowPanel() {
 
 function isFollowingPage() {
     const path = new URL(location.href).pathname.split('/').pop()
-    console.log(location.href, path)
     return path === 'following'
 }
 
