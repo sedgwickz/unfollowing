@@ -4,24 +4,32 @@
 // @version      0.2
 // @description  try to take over the world!
 // @author       You
-// @match        https://x.com/*/following
+// @match        https://x.com/*
 // @grant        none
 // @downloadURL https://update.greasyfork.org/scripts/423259/XTwitter%20Unfollowing.user.js
 // @updateURL https://update.greasyfork.org/scripts/423259/XTwitter%20Unfollowing.meta.js
 // ==/UserScript==
 
-(function() {
-    'use strict';
-    const sleep = ms => new Promise((resolve) => setTimeout(resolve, ms))
-    function applyStyles(element, styles) {
-        for (let property in styles) {
-            if (styles.hasOwnProperty(property)) {
-                element.style[property] = styles[property];
-            }
+const panelId = '__sedgwickz__unfollow_id'
+const sleep = ms => new Promise((resolve) => setTimeout(resolve, ms))
+function applyStyles(element, styles) {
+    for (let property in styles) {
+        if (styles.hasOwnProperty(property)) {
+            element.style[property] = styles[property];
         }
     }
+}
 
-    const container = document.createElement('div')
+
+function createUnfollowPanel() {
+
+    if (document.getElementById(panelId)) {
+        const panel = document.getElementById(panelId)
+        panel.remove()
+    }
+
+    let container = document.createElement('div')
+    container.id = panelId
     applyStyles(container, {
         position: 'fixed',
         'z-index': 9999999,
@@ -74,6 +82,43 @@
             await unFollow()
         }
     })
+}
 
+function isFollowingPage() {
+    const path = new URL(location.href).pathname.split('/').pop()
+    console.log(location.href, path)
+    return path === 'following'
+}
 
+function start() {
+    if (isFollowingPage()) {
+        createUnfollowPanel()
+    } else {
+        const panel = document.getElementById(panelId)
+        if (panel) {
+            panel.remove()
+        }
+    }
+}
+
+window.navigation.addEventListener("navigate", (event) => {
+    setTimeout(() => {
+        start()
+    }, 200)
+});
+
+if (window.onurlchange === null) {
+    // feature is supported
+    window.addEventListener('urlchange', (info) => {
+        setTimeout(() => {
+            start()
+        }, 200)
+    } );
+}
+
+(function() {
+    'use strict';
+    start()
 })();
+
+
